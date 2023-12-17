@@ -16,19 +16,26 @@ object Main {
 
     println(showPrice(30.5, 2))
 
-
     val highQualityAndMobile = Experience(duration, highQuality, Mobile)
     val lowQualityAndFixed = Experience(duration, lowQuantity, Fixed)
 
-    println(highQualityAndMobile)
+    println(footprint(highQualityAndMobile))
+    println(footprint(lowQualityAndFixed))
 
 
     println("-------------------------------")
   }
 
+  def networkEnergy(network: Network): Double = network match {
+    case Fixed => 0.00043
+    case Mobile => 0.00088
+  }
+
   def footprint(experience: Experience): Double = {
     val megaBytes = experience.duration * experience.definition
-    val energy =
+    val energy = dataCenterEnergy * networkEnergy(experience.network)
+
+    megaBytes * energy * 0.5 // kgCO2PerKwh
   }
 
 }
