@@ -1,8 +1,5 @@
 import Methods.showPrice
-
-sealed trait Network
-case object Fixed extends Network
-case object Mobile extends Network
+import scala.Console.println
 
 object Main {
 
@@ -19,8 +16,11 @@ object Main {
     val highQualityAndMobile = Experience(duration, highQuality, Mobile)
     val lowQualityAndFixed = Experience(duration, lowQuantity, Fixed)
 
-    println(footprint(highQualityAndMobile))
-    println(footprint(lowQualityAndFixed))
+    val footprint1 = footprint(highQualityAndMobile)
+    val footprint2 = footprint(lowQualityAndFixed)
+
+    println(footprint1)
+    println(footprint2)
 
 
     println("-------------------------------")
@@ -33,7 +33,7 @@ object Main {
 
   def footprint(experience: Experience): Double = {
     val megaBytes = experience.duration * experience.definition
-    val energy = dataCenterEnergy * networkEnergy(experience.network)
+    val energy = dataCenterEnergy + networkEnergy(experience.network)
 
     megaBytes * energy * 0.5 // kgCO2PerKwh
   }
