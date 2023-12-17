@@ -7,10 +7,7 @@ object Main {
 
     println(showPrice(30.5, 2))
 
-
     println("-------------------------------")
   }
-
-
 
 }
