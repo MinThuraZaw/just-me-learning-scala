@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/fireworks_3979.iml" filepath="$PROJECT_DIR$/.idea/modules/fireworks_3979.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/fireworks_3979-build.iml" filepath="$PROJECT_DIR$/.idea/modules/fireworks_3979-build.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/effective-scala-fireworks.iml" filepath="$PROJECT_DIR$/.idea/modules/effective-scala-fireworks.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/effective-scala-fireworks-build.iml" filepath="$PROJECT_DIR$/.idea/modules/effective-scala-fireworks-build.iml" />
     </modules>
   </component>
 </project>
