@@ -1,0 +1,84 @@
+[debug] > Exec(early(addDefaultCommands), None, None)
+[debug] > Exec(addDefaultCommands, None, None)
+[debug] > Exec(early(initialize), None, None)
+[debug] > Exec(initialize, None, None)
+[debug] > Exec(boot, None, None)
+[debug] > Exec(writeSbtVersion, None, None)
+[debug] > Exec(reload, None, None)
+[debug] > Exec(sbtStashOnFailure, None, None)
+[debug] > Exec(onFailure loadFailed, None, None)
+[debug] > Exec(loadp, None, None)
+[info] welcome to sbt 1.8.2 (Oracle Corporation Java 13.0.2)
+[debug]       Load.loadUnit: plugins took 77.744497ms
+[debug]       Load.loadUnit: defsScala took 0.317537ms
+[debug] [Loading] Scanning directory /Users/thurazaw/.sbt/1.0/plugins
+[debug] [Loading] Found non-root projects 
+[debug] [Loading] Done in /Users/thurazaw/.sbt/1.0/plugins, returning: ()
+[debug] deducing auto plugins based on known facts Set(Atom(sbt.plugins.CorePlugin)) and clauses Clauses(Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.IvyPlugin)))
+[debug] Clause(Atom(sbt.ScriptedPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.SbtPlugin),Set(Atom(sbt.ScriptedPlugin)))
+[debug] Clause(Atom(sbt.plugins.SemanticdbPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.JUnitXmlReportPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.MiniDependencyTreePlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.CorePlugin),Set(Atom(sbt.plugins.IvyPlugin)))
+[debug] Clause(Atom(sbt.plugins.IvyPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.SemanticdbPlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.JUnitXmlReportPlugin)))
+[debug] Clause(Atom(sbt.plugins.CorePlugin),Set(Atom(sbt.plugins.Giter8TemplatePlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.MiniDependencyTreePlugin))))
+[debug]   :: deduced result: Matched(sbt.plugins.CorePlugin,sbt.plugins.Giter8TemplatePlugin,sbt.plugins.IvyPlugin,sbt.plugins.JvmPlugin,sbt.plugins.MiniDependencyTreePlugin,sbt.plugins.JUnitXmlReportPlugin,sbt.plugins.SemanticdbPlugin)
+[debug] Plugins.deducer#function took 23.165406 ms
+[debug]           Load.resolveProject(global-plugins) took 41.048091ms
+[debug]         Load.loadTransitive: finalizeProject(Project(id global-plugins, base: /Users/thurazaw/.sbt/1.0/plugins, plugins: List(<none>))) took 88.586794ms
+[debug] [Loading] Done in /Users/thurazaw/.sbt/1.0/plugins, returning: (global-plugins)
+[debug]       Load.loadUnit: loadedProjectsRaw took 109.451314ms
+[debug]       Load.loadUnit: cleanEvalClasses took 0.212356ms
+[debug]     Load.loadUnit(file:/Users/thurazaw/.sbt/1.0/plugins/, ...) took 195.540231ms
+[debug]   Load.apply: load took 574.4646ms
+[debug]   Load.apply: resolveProjects took 7.355221ms
+[debug]   Load.apply: finalTransforms took 58.153802ms
+[debug]   Load.apply: config.delegates took 5.794352ms
+[debug]   Load.apply: Def.make(settings)... took 387.185397ms
+[debug]   Load.apply: structureIndex took 84.400673ms
+[debug]   Load.apply: mkStreams took 1.364351ms
+[info] loading global plugins from /Users/thurazaw/.sbt/1.0/plugins
+[debug] Running task... Cancel: Signal, check cycles: false, forcegc: true
+[debug] Load.defaultLoad until apply took 3602.552007ms
+[debug]           Load.loadUnit: plugins took 22.536048ms
+[debug]           Load.loadUnit: defsScala took 0.003038ms
+[debug] [Loading] Scanning directory /Users/thurazaw/Documents/GitHub/just-me-learning-scala/fireworks/project
+[debug]             Load.loadUnit: mkEval took 5.544124ms
+[debug] [Loading] Found non-root projects 
+[debug] [Loading] Done in /Users/thurazaw/Documents/GitHub/just-me-learning-scala/fireworks/project, returning: ()
+[debug] deducing auto plugins based on known facts Set(Atom(sbt.plugins.CorePlugin)) and clauses Clauses(Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.IvyPlugin)))
+[debug] Clause(Atom(sbt.ScriptedPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.SbtPlugin),Set(Atom(sbt.ScriptedPlugin)))
+[debug] Clause(Atom(sbt.plugins.SemanticdbPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.JUnitXmlReportPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.MiniDependencyTreePlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.CorePlugin),Set(Atom(sbt.plugins.IvyPlugin)))
+[debug] Clause(Atom(sbt.plugins.IvyPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.SemanticdbPlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.JUnitXmlReportPlugin)))
+[debug] Clause(Atom(sbt.plugins.CorePlugin),Set(Atom(sbt.plugins.Giter8TemplatePlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.MiniDependencyTreePlugin))))
+[debug]   :: deduced result: Matched(sbt.plugins.CorePlugin,sbt.plugins.Giter8TemplatePlugin,sbt.plugins.IvyPlugin,sbt.plugins.JvmPlugin,sbt.plugins.MiniDependencyTreePlugin,sbt.plugins.JUnitXmlReportPlugin,sbt.plugins.SemanticdbPlugin)
+[debug] Plugins.deducer#function took 1.310606 ms
+[info] loading settings for project fireworks-build from buildSettings.sbt,plugins.sbt ...
+[debug]               Load.resolveProject(fireworks-build) took 2.063542ms
+[debug]             Load.loadTransitive: finalizeProject(Project(id fireworks-build, base: /Users/thurazaw/Documents/GitHub/just-me-learning-scala/fireworks/project, plugins: List(<none>))) took 3.866757ms
+[debug] [Loading] Done in /Users/thurazaw/Documents/GitHub/just-me-learning-scala/fireworks/project, returning: (fireworks-build)
+[debug]           Load.loadUnit: loadedProjectsRaw took 2024.582432ms
+[debug]           Load.loadUnit: cleanEvalClasses took 4.585437ms
+[debug]         Load.loadUnit(file:/Users/thurazaw/Documents/GitHub/just-me-learning-scala/fireworks/project/, ...) took 2052.277169ms
+[debug]       Load.apply: load took 2053.450899ms
+[debug]       Load.apply: resolveProjects took 0.086974ms
+[debug]       Load.apply: finalTransforms took 7.052645ms
+[debug]       Load.apply: config.delegates took 0.393264ms
+[debug]       Load.apply: Def.make(settings)... took 57.741652ms
+[debug]       Load.apply: structureIndex took 22.298222ms
+[debug]       Load.apply: mkStreams took 0.002355ms
+[info] loading project definition from /Users/thurazaw/Documents/GitHub/just-me-learning-scala/fireworks/project
+[debug] Running task... Cancel: Signal, check cycles: false, forcegc: true
+[info] compiling 3 Scala sources to /Users/thurazaw/Documents/GitHub/just-me-learning-scala/fireworks/project/target/scala-2.12/sbt-1.0/classes ...
+[info] Non-compiled module 'compiler-bridge_2.12' for Scala 2.12.17. Compiling...
