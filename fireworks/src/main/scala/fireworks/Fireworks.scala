@@ -124,7 +124,11 @@ case class Launched(countDown: Int, position: Point, direction: Angle, numberOfP
    *         use the operation [[Exploding.init]] to transition the firework to the [[Exploding]] state,
    *         and use the constant [[Settings.propulsionSpeed]] for the speed of the firework.
    */
-  def next: Firework = Exploding.init(countDown, direction, position, particlesColor)
+  def next: Firework =
+    if countDown > 0 then
+      copy(countDown = countDown - 1, position = Motion.movePoint(position, direction, Settings.propulsionSpeed))
+    else
+      Exploding.init(numberOfParticles, direction, position, particlesColor)
 
 end Launched
 
