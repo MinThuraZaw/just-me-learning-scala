@@ -45,7 +45,11 @@ object Firework:
    * style.
    */
   def next(firework: Firework): Firework =
-    ???
+    firework match
+      case Done => Done
+      case waiting: Waiting => waiting.next
+      case launched: Launched => launched.next
+      case exploding: Exploding => exploding.next
 
 end Firework
 
@@ -73,7 +77,7 @@ case class Waiting(countDown: Int, startPosition: Point, numberOfParticles: Int,
   def next: Firework =
     if countDown > 0 then
       copy(countDown = countDown - 1)
-    else ???
+    else Launched.init(startPosition, numberOfParticles, particlesColor);
 
 end Waiting
 
@@ -120,8 +124,7 @@ case class Launched(countDown: Int, position: Point, direction: Angle, numberOfP
    *         use the operation [[Exploding.init]] to transition the firework to the [[Exploding]] state,
    *         and use the constant [[Settings.propulsionSpeed]] for the speed of the firework.
    */
-  def next: Firework =
-    ???
+  def next: Firework = Exploding.init(countDown, direction, position, particlesColor)
 
 end Launched
 
