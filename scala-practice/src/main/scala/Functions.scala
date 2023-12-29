@@ -5,14 +5,13 @@ object Functions extends App {
     result
   }
 
-  val endWithDotCom: String => Boolean = x => x.endsWith(".com")
+  val endWithDotCom: String => Boolean = _.endsWith(".com")
 
   val result1 = increment.apply(2)
   println(result1)
 
   val result2 = endWithDotCom("minthura")
   println(result2)
-
 
 
 }
