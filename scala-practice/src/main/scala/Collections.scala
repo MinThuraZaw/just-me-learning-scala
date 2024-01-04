@@ -37,12 +37,31 @@ object Collections extends App{
 
   println(data.filter(x => x > 50))
 
+  // Transforming
   val foldLeftresult = data.foldLeft(0)((first, second) => first + second)
-  println("foldLeft")
-  println(foldLeftresult)
+  // println("foldLeft")
+  // println(foldLeftresult)
 
-  println(myList2.size)
-  println(myAB.isEmpty)
+  // println(myList2.size)
+  // println(myAB.isEmpty)
+
+  val emails = List("member1@gmail.com", "sam@earth.world", "bob@sca.la", "me@earth.world")
+
+  val domain: String => String = (email) => email.dropWhile(c => c != '@').drop(1)
+  val emailsByDomain = emails.groupBy(domain)
+
+  // println(emailsByDomain)
+
+  val summerFruit = List("strawberry", "cherry", "raspberry")
+  // println(summerFruit.map(str => str.toUpperCase))
+
+  // Sequences
+  val seqData = List("Alice" -> 1, "Bob" -> 2)
+  println(seqData.sortBy((name, _) => name))
+
+  // Maps
+  val mapData = Map("A" -> 0, "B" -> 1, "C" -> 2)
+  println(mapData)
 
 
 }
