@@ -1,7 +1,10 @@
 import scala.collection.mutable
 
+case class Contact(name:String, email:Option[String])
+
 object Collections extends App{
 
+  // Constructing
   val myList = List.empty[Int]
   var myAB = mutable.ArrayBuffer.empty[String]
   val myMap = Map.empty[Int, String]
@@ -38,6 +41,7 @@ object Collections extends App{
   println(data.filter(x => x > 50))
 
   // Transforming
+  // map, flatMap, foldLeft
   val foldLeftresult = data.foldLeft(0)((first, second) => first + second)
   // println("foldLeft")
   // println(foldLeftresult)
@@ -61,7 +65,19 @@ object Collections extends App{
 
   // Maps
   val mapData = Map("A" -> 0, "B" -> 1, "C" -> 2)
-  println(mapData)
+  println(mapData.get("B"))
+  println(mapData.get("e"))
+
+  // Option
+  // zip
+  val contact = Contact("user1", Some("user1@gmail.com"))
+  val contact2 = Contact("user2", None)
+
+  def emailLength(contact: Contact): Int =
+    contact.email.map(email => email.length).getOrElse(0)
+
+  println(emailLength(contact))
+  println(emailLength(contact2))
 
 
 }
