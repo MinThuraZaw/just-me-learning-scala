@@ -31,5 +31,18 @@ object Collections extends App{
   val (q,r) = euclideanDivision(10,4)
   println(r)
 
+  // Querying collection
+  val data = List(2,4,5,7,88,97)
+  println(data.find(x => x > 50))
+
+  println(data.filter(x => x > 50))
+
+  val foldLeftresult = data.foldLeft(0)((first, second) => first + second)
+  println("foldLeft")
+  println(foldLeftresult)
+
+  println(myList2.size)
+  println(myAB.isEmpty)
+
 
 }
