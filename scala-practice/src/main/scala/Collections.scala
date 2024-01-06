@@ -1,6 +1,6 @@
 import scala.collection.mutable
 
-case class Contact(name:String, email:Option[String])
+case class Contact(name:String, phoneNumber: String, email:Option[String])
 
 object Collections extends App{
 
@@ -79,8 +79,8 @@ object Collections extends App{
 
   // Option
   // zip
-  val contact = Contact("user1", Some("user1@gmail.com"))
-  val contact2 = Contact("user2", None)
+  val contact = Contact("user1", "099", Some("user1@gmail.com"))
+  val contact2 = Contact("user2", "099", None)
 
   def emailLength(contact: Contact): Int =
     contact.email.map(email => email.length).getOrElse(0)

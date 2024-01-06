@@ -8,6 +8,16 @@ object Loops extends App {
     (1 to n).foldLeft(1)((result, x) => result * x)
   }
 
+  def factorial2(n: Int): Int = {
+    def factorialTailRec(x: Int, acc: Int): Int = {
+      if x == 0 then acc
+      else factorialTailRec(x - 1, x * acc)
+    }
+
+    factorialTailRec(n, 1)
+
+  }
+
   println(factorial(4))
   println((1 to 10))
 
@@ -35,5 +45,14 @@ object Loops extends App {
   }
 
   println(totalDuration(deploy))
+
+  // for loop
+  val numbers = List("+9599", "+9594", "+99784", "+66334", "+9611")
+  val mmContact: List[String] = {
+    for number <- numbers
+      if number.startsWith("+95") yield number
+  }
+
+  println(mmContact)
 
 }
