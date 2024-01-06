@@ -88,5 +88,13 @@ object Collections extends App{
   println(emailLength(contact))
   println(emailLength(contact2))
 
+  val l1 = List.empty[Int]
+  val l2 = 1 +: 2 +: 3 +: l1
+  val l3 = l2 ++ List(4, 5, 6)
+  val l4 = l3.filter(x => x % 2 == 0)
+  val result2 = l4.exists(x => x == l4.size)
+  println(l4)
+  println(result2)
+
 
 }
