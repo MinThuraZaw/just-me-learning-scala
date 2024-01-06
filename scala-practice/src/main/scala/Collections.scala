@@ -10,18 +10,23 @@ object Collections extends App{
   val myMap = Map.empty[Int, String]
 
   val myList2 = 0 +: myList :+ 1
-  println(myList2)
+  // println(myList2)
 
   myAB = myAB :+ "hello"
-  println(myAB :+ "hello")
+  myAB += "me"
+  myAB -= "hello"
+  // println(myAB :+ "hello")
+
+  println(myList ++ List(3,4,5))
+  println(myAB ++ mutable.ArrayBuffer(4,5,6))
 
   // Tuples
   val pair1:(Int, String) = 1 -> "Me"
   val pair2:(Int, String) = 2 -> "You"
 
+  // Maps
   val myMap2: Map[Int, String] = Map(pair1, pair2)
   println(myMap2)
-
 
   def euclideanDivision(dividend: Int, divisor: Int): (Int, Int) =
     val quotient = dividend / divisor
@@ -36,9 +41,13 @@ object Collections extends App{
 
   // Querying collection
   val data = List(2,4,5,7,88,97)
-  println(data.find(x => x > 50))
+  val data2 = mutable.ArrayBuffer(2,4,6,5,77,43)
 
-  println(data.filter(x => x > 50))
+  // println(data.find(x => x > 50))
+  // println(data.filter(x => x > 50))
+  println(data2.exists(x => x > 4))
+  println(data2.forall(x => x < 10))
+
 
   // Transforming
   // map, flatMap, foldLeft
