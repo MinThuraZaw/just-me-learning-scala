@@ -28,13 +28,15 @@ object Collections extends App{
   val myMap2: Map[Int, String] = Map(pair1, pair2)
   println(myMap2)
 
-  def euclideanDivision(dividend: Int, divisor: Int): (Int, Int) =
+  def euclideanDivision(dividend: Int, divisor: Int): (Int, Int) = {
     val quotient = dividend / divisor
     val remainder = dividend % divisor
+
     (quotient, remainder)
+  }
 
   val result = euclideanDivision(10,3)
-  print(result(0))
+  print(result())
 
   val (q,r) = euclideanDivision(10,4)
   println(r)
@@ -70,7 +72,7 @@ object Collections extends App{
 
   // Sequences
   val seqData = List("Alice" -> 1, "Bob" -> 2)
-  println(seqData.sortBy((name, _) => name))
+  println(seqData.sortBy((name) => name))
 
   // Maps
   val mapData = Map("A" -> 0, "B" -> 1, "C" -> 2)

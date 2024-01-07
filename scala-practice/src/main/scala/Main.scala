@@ -1,5 +1,6 @@
 import Methods.showPrice
 import scala.Console.println
+import main.scala._
 
 object Main {
 
@@ -10,6 +11,8 @@ object Main {
 
   def main(args: Array[String]): Unit = {
     println("-------------------------------")
+    // println(Packages.test)
+
 
     println(showPrice(30.5, 2))
 

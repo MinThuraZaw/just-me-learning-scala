@@ -10,7 +10,7 @@ object Loops extends App {
 
   def factorial2(n: Int): Int = {
     def factorialTailRec(x: Int, acc: Int): Int = {
-      if x == 0 then acc
+      if (x == 0)  acc
       else factorialTailRec(x - 1, x * acc)
     }
 
@@ -49,8 +49,9 @@ object Loops extends App {
   // for loop
   val numbers = List("+9599", "+9594", "+99784", "+66334", "+9611")
   val mmContact: List[String] = {
-    for number <- numbers
-      if number.startsWith("+95") yield number
+    for (number <- numbers) {
+      if (number.startsWith("+95")) number
+    }
   }
 
   println(mmContact)
