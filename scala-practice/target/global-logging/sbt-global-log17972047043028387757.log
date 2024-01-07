@@ -1,0 +1,12 @@
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(run, Some(11d05004-aedd-4354-a66f-b60e6b0d211d), Some(CommandSource(console0)))[0m
+[0m[[0m[0mdebug[0m] [0m[0mEvaluating tasks: Compile / run[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning task... Cancel: Signal, check cycles: false, forcegc: true[0m
+[0m[[0m[0minfo[0m] [0m[0mcompiling 1 Scala source to /Users/thurazaw/Documents/GitHub/just-me-learning-scala/scala-practice/target/scala-2.12/classes ...[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/thurazaw/Documents/GitHub/just-me-learning-scala/scala-practice/src/main/scala/Main.scala:14:13: not found: value fansi[0m
+[0m[[0m[31merror[0m] [0m[0m    println(fansi.Color.Red("-------------------------------"))[0m
+[0m[[0m[31merror[0m] [0m[0m            ^[0m
+[0m[[0m[31merror[0m] [0m[0mone error found[0m
+[0m[[0m[0mdebug[0m] [0m[0mForcing garbage collection...[0m
+[0m[[0m[31merror[0m] [0m[0m(Compile / [31mcompileIncremental[0m) Compilation failed[0m
+[0m[[0m[31merror[0m] [0m[0mTotal time: 1 s, completed Jan 7, 2024, 8:20:05 PM[0m
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(shell, None, None)[0m

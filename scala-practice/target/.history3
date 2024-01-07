@@ -8,3 +8,17 @@
 1704616597172:console
 1704620433900:compile
 1704620569642:;set _root_.scala.collection.Seq(historyPath := None,shellPrompt := { _ => "" },SettingKey[_root_.scala.Option[_root_.sbt.File]]("sbtStructureOutputFile") in _root_.sbt.Global := _root_.scala.Some(_root_.sbt.file("/private/var/folders/8c/5cmf1gvd6zb762dwg6dk89wh0000gn/T/sbt-structure.xml")),SettingKey[_root_.java.lang.String]("sbtStructureOptions") in _root_.sbt.Global := "download, resolveClassifiers");apply -cp "/Users/thurazaw/Library/Application Support/JetBrains/IdeaIC2023.2/plugins/Scala/repo/org/jetbrains/scala/sbt-structure-extractor_2.12_1.0/2023.1.0/sbt-structure-extractor-2023.1.0.jar" org.jetbrains.sbt.CreateTasks;preferScala2;*/*:dumpStructure
+1704629991111:test
+1704630032666:compile
+1704630885460:show
+1704630895659:show unmanagedSources
+1704630916838:show unmanagedSources / includeFilter
+1704630998031:scala-practice
+1704631013107:scala-practice / sourceDirectory
+1704631645250:help
+1704631654083:about
+1704631674511:help unmanagedSources
+1704631686247:help ThisBuild
+1704631689146:help ThisBuilt
+1704631698750:help Compile
+1704633604882:run

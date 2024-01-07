@@ -1,6 +1,8 @@
-[debug] downloaded https://repo1.maven.org/maven2/com/lihaoyi/fansi_2.12/0.4.0/fansi_2.12-0.4.0.pom
-[debug] downloaded https://repo1.maven.org/maven2/com/lihaoyi/fansi_2.12/0.4.0/fansi_2.12-0.4.0.jar
-[debug] downloaded https://repo1.maven.org/maven2/com/lihaoyi/fansi_2.12/0.4.0/fansi_2.12-0.4.0-sources.jar
-[debug] downloaded https://repo1.maven.org/maven2/com/lihaoyi/sourcecode_2.12/0.3.0/sourcecode_2.12-0.3.0-sources.jar
-[debug] downloaded https://repo1.maven.org/maven2/com/lihaoyi/sourcecode_2.12/0.3.0/sourcecode_2.12-0.3.0-javadoc.jar
-[debug] downloaded https://repo1.maven.org/maven2/com/lihaoyi/fansi_2.12/0.4.0/fansi_2.12-0.4.0-javadoc.jar
+[debug] downloaded https://repo1.maven.org/maven2/org/scalameta/munit_2.12/0.7.29/munit_2.12-0.7.29.pom
+[debug] downloaded https://repo1.maven.org/maven2/org/scalameta/junit-interface/0.7.29/junit-interface-0.7.29.pom
+[debug] downloaded https://repo1.maven.org/maven2/org/scalameta/junit-interface/0.7.29/junit-interface-0.7.29.jar
+[debug] downloaded https://repo1.maven.org/maven2/org/scalameta/munit_2.12/0.7.29/munit_2.12-0.7.29.jar
+[debug] downloaded https://repo1.maven.org/maven2/org/scalameta/junit-interface/0.7.29/junit-interface-0.7.29-sources.jar
+[debug] downloaded https://repo1.maven.org/maven2/org/scalameta/munit_2.12/0.7.29/munit_2.12-0.7.29-sources.jar
+[debug] downloaded https://repo1.maven.org/maven2/org/scalameta/junit-interface/0.7.29/junit-interface-0.7.29-javadoc.jar
+[debug] downloaded https://repo1.maven.org/maven2/org/scalameta/munit_2.12/0.7.29/munit_2.12-0.7.29-javadoc.jar

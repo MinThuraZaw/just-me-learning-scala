@@ -1,6 +1,7 @@
 import Methods.showPrice
 import scala.Console.println
 import main.scala._
+// import fansi
 
 object Main {
 
@@ -10,7 +11,7 @@ object Main {
   val dataCenterEnergy = 0.000072
 
   def main(args: Array[String]): Unit = {
-    println(fansi.Color.Red("-------------------------------"))
+    // println(fansi.Color.Red("-------------------------------"))
     // println(Packages.test)
 
 
