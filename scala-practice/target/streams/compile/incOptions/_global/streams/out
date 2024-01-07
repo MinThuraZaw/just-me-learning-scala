@@ -1,0 +1,57 @@
+[0m[[0m[0mdebug[0m] [0m[0mCreated transactional ClassFileManager with tempDir = /Users/thurazaw/Documents/GitHub/just-me-learning-scala/scala-practice/target/scala-2.12/classes.bak[0m
+[0m[[0m[0mdebug[0m] [0m[0mAbout to delete class files:[0m
+[0m[[0m[0mdebug[0m] [0m[0mWe backup class files:[0m
+[0m[[0m[0mdebug[0m] [0m[0mCreated transactional ClassFileManager with tempDir = /Users/thurazaw/Documents/GitHub/just-me-learning-scala/scala-practice/target/scala-2.12/classes.bak[0m
+[0m[[0m[0mdebug[0m] [0m[0mAbout to delete class files:[0m
+[0m[[0m[0mdebug[0m] [0m[0mWe backup class files:[0m
+[0m[[0m[0mdebug[0m] [0m[0mRegistering generated classes:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Open$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Solid$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Card.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Squiggle.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Shading.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Striped.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Task.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Methods$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Functions$delayedInit$body.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Functions$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Loops.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Green$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Shape.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Task$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Main.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Collections.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Packages.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Fixed$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Card$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Diamond$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Collections$delayedInit$body.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Open.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Oval.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Purple.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Color.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Packages$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Red$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Contact$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Loops$delayedInit$body.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Striped$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Solid.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Main$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Oval$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Squiggle$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Diamond.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Loops$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Network.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Methods.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Collections$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Contact.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Fixed.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Green.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Purple$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Red.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Mobile.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Experience$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Mobile$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Experience.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Functions.class[0m
+[0m[[0m[0mdebug[0m] [0m[0mRemoving the temporary directory used for backing up class files: /Users/thurazaw/Documents/GitHub/just-me-learning-scala/scala-practice/target/scala-2.12/classes.bak[0m

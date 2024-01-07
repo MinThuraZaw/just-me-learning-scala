@@ -36,7 +36,7 @@ object Collections extends App{
   }
 
   val result = euclideanDivision(10,3)
-  print(result())
+  //print(result())
 
   val (q,r) = euclideanDivision(10,4)
   println(r)

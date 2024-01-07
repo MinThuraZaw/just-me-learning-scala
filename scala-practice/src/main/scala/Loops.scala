@@ -33,27 +33,27 @@ object Loops extends App {
   val hack = Task("hack", 8, List(csSetup, ide))
   val deploy = Task("deploy", 5, List(hack))
 
-  def totalDuration(task: Task): Int = {
-    val reqMaxTotalDuration =
-      task.requirements
-        .map(totalDuration)
-        .maxOption
-        .getOrElse(0)
-
-    task.duration + reqMaxTotalDuration
-
-  }
-
-  println(totalDuration(deploy))
+//  def totalDuration(task: Task): Int = {
+//    val reqMaxTotalDuration =
+//      task.requirements
+//        .map(totalDuration)
+//        .maxOption
+//        .getOrElse(0)
+//
+//    task.duration + reqMaxTotalDuration
+//
+//  }
+//
+//  println(totalDuration(deploy))
 
   // for loop
-  val numbers = List("+9599", "+9594", "+99784", "+66334", "+9611")
-  val mmContact: List[String] = {
-    for (number <- numbers) {
-      if (number.startsWith("+95")) number
-    }
-  }
-
-  println(mmContact)
+//  val numbers = List("+9599", "+9594", "+99784", "+66334", "+9611")
+//  val mmContact: List[String] = {
+//    for (number <- numbers) {
+//      if (number.startsWith("+95")) {number}
+//    }
+//  }
+//
+//  println(mmContact)
 
 }

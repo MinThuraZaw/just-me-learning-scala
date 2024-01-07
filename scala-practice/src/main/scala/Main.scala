@@ -10,7 +10,7 @@ object Main {
   val dataCenterEnergy = 0.000072
 
   def main(args: Array[String]): Unit = {
-    println("-------------------------------")
+    println(fansi.Color.Red("-------------------------------"))
     // println(Packages.test)
 
 
