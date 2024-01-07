@@ -77,11 +77,13 @@ case class Election(description: String, candidates: Set[Candidate]):
 
   def findWinner(gradesPerCandidate: Map[Candidate, Seq[Grade]]): Candidate =
 
-    if gradesPerCandidate.forall((candidate, grades) => grades.isEmpty) then
+    if gradesPerCandidate.forall((candidate, grades) => grades.isEmpty) then {
       val candidatesSeq = gradesPerCandidate.keys.toSeq
-      val randomIndex   = util.Random.between(0, candidatesSeq.size)
+      val randomIndex = util.Random.between(0, candidatesSeq.size)
       candidatesSeq(randomIndex)
-    else
+    }
+    else {
+
       val bestMedianGrade: Grade =
         gradesPerCandidate
           .values
@@ -91,15 +93,18 @@ case class Election(description: String, candidates: Set[Candidate]):
 
       val bestCandidates: Map[Candidate, Seq[Grade]] =
         gradesPerCandidate
-          .filter((_, listGrade) => Grade.median(listGrade) == bestMedianGrade)
+          .filter((_, listGrade) =>
+            Grade.median(listGrade) == bestMedianGrade)
 
       if bestCandidates.size == 1 then
         bestCandidates.head._1
       else
         val bestCandidatesMinusOneMedianGrade: Map[Candidate, Seq[Grade]] =
-          bestCandidates.map((candidate, grade) => candidate -> grade.diff(List(bestMedianGrade)))
+          bestCandidates.map((candidate, grade) =>
+            candidate -> grade.diff(List(bestMedianGrade)))
 
         findWinner(bestCandidatesMinusOneMedianGrade)
+    }
 
   end findWinner
 
