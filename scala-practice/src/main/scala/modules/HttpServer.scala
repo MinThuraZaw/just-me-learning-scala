@@ -1,6 +1,17 @@
 package modules
 
-class HttpServer extends DatabaseAccess {
-  override def getData(): List[Int] = super.getData()
+object HttpServer extends App {
+
+}
+
+trait HttpClient{
+
+  def send() = {
+    ???
+  }
+
+  final def get(uri: String) = {
+    this.send()
+  }
 
 }

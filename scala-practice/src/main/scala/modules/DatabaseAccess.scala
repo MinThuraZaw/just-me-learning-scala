@@ -8,3 +8,10 @@ trait DatabaseAccess{
   }
 
 }
+
+trait DatabaseLogging{
+
+  def getLogData={
+    ???
+  }
+}
