@@ -2,4 +2,11 @@
 
 My preferred Scala Learning Path
 
+=> [Getting Started with IntelliJ](https://docs.scala-lang.org/getting-started/intellij-track/getting-started-with-scala-in-intellij.html)
+
 => [Tour of Scala](https://docs.scala-lang.org/tour/tour-of-scala.html)
+
+=> [Getting Started with sbt](https://docs.scala-lang.org/getting-started/sbt-track/getting-started-with-scala-and-sbt-on-the-command-line.html)<br>
+(You can use sbt very well with IntelliJ terminal)
+
+=> [Scala 2 Book](https://docs.scala-lang.org/overviews/scala-book/introduction.html)
