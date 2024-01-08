@@ -1,6 +1,8 @@
 import Methods.showPrice
+
 import scala.Console.println
 import main.scala._
+import modules.DatabaseAccess
 // import fansi
 
 object Main {
@@ -13,6 +15,8 @@ object Main {
   def main(args: Array[String]): Unit = {
     // println(fansi.Color.Red("-------------------------------"))
     // println(Packages.test)
+    // val da: DatabaseAccess = new DatabaseAccess
+    // println(da.getName())
 
 
     println(showPrice(30.5, 2))
