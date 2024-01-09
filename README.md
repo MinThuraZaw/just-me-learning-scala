@@ -10,3 +10,7 @@ My preferred Scala Learning Path
 (You can use sbt very well with IntelliJ terminal)
 
 => [Scala 2 Book](https://docs.scala-lang.org/overviews/scala-book/introduction.html)
+
+=> [Effective Programming in Scala - Coursera](https://www.coursera.org/learn/effective-scala?skipBrowseRedirect=true)
+
+=> [Functional Programming Principles in Scala - Coursera](https://www.coursera.org/learn/scala-functional-programming?specialization=scala)
