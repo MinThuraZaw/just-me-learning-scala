@@ -48,7 +48,10 @@ object InMemoryModel extends Model:
 
   def delete(id: Id): Boolean =
     var found = false
-    idStore.remove(id)
+    idStore.remove(id) match{
+      case Some(_) => found = true
+      case None => found = false
+    }
     found
 
   def tasks: Tasks =
