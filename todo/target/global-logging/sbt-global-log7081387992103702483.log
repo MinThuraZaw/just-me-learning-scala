@@ -1,0 +1,21 @@
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(submit minthurazaw619@gmail.com qKEOVnQzL53e9ePW, Some(fef22c36-0a77-4d88-8b4d-76d832881857), Some(CommandSource(console0)))[0m
+[0m[[0m[0mdebug[0m] [0m[0mEvaluating tasks: submit[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning task... Cancel: Signal, check cycles: false, forcegc: true[0m
+[0m[[0m[0minfo[0m] [0m[0mcompiling 14 Scala sources to /Users/thurazaw/Documents/GitHub/just-me-learning-scala/todo/target/scala-3.3.0/classes ...[0m
+[0m[[0m[0minfo[0m] [0m[0mAttempting to submit "todo" assignment in "effective-scala" course[0m
+[0m[[0m[0minfo[0m] [0m[0mUsing:[0m
+[0m[[0m[0minfo[0m] [0m[0m- email: minthurazaw619@gmail.com[0m
+[0m[[0m[0minfo[0m] [0m[0m- submit token: qKEOVnQzL53e9ePW[0m
+[0m[[0m[0minfo[0m] [0m[0mConnecting to Coursera...[0m
+[0m[[0m[0minfo[0m] [0m[0mSuccessfully connected to Coursera. (Status 201)[0m
+[0m[[0m[0minfo[0m] [0m[0m[0m
+[0m[[0m[0minfo[0m] [0m[0mAssignment submitted successfully![0m
+[0m[[0m[0minfo[0m] [0m[0m[0m
+[0m[[0m[0minfo[0m] [0m[0mYou can see how you scored by going to:[0m
+[0m[[0m[0minfo[0m] [0m[0mhttps://www.coursera.org/learn/effective-scala/programming/UTVcC/[0m
+[0m[[0m[0minfo[0m] [0m[0mor (for premium learners):[0m
+[0m[[0m[0minfo[0m] [0m[0mhttps://www.coursera.org/learn/effective-scala/programming/adwoD[0m
+[0m[[0m[0minfo[0m] [0m[0m                       [0m
+[0m[[0m[0minfo[0m] [0m[0mand clicking on "My Submission".[0m
+[0m[[0m[32msuccess[0m] [0m[0mTotal time: 11 s, completed Jan 11, 2024, 9:22:44 PM[0m
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(shell, None, None)[0m
