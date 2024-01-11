@@ -111,7 +111,15 @@ object PersistentModel extends Model:
 
 
   def update(id: Id)(f: Task => Task): Option[Task] =
-    ???
+    val tasks = loadTasks().toMap
+    val updatedTasks = tasks.map { (itemId, itemTask) =>
+      if itemId == id then
+        itemId -> f(itemTask)
+      else
+        itemId -> itemTask
+    }
+    saveTasks(Tasks(updatedTasks))
+    updatedTasks.get(id)
 
 
   def delete(id: Id): Boolean =
