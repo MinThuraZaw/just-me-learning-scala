@@ -1,7 +1,7 @@
 import Methods.showPrice
 
 import scala.Console.println
-import main.scala._
+// import main.scala.Mnemonics
 import modules.DatabaseAccess
 // import fans
 
@@ -20,6 +20,7 @@ object Main {
 
 
     println(showPrice(30.5, 2))
+
 
     // business modeling examples
     // the impact of video streaming on environment
