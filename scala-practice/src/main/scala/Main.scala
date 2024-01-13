@@ -3,7 +3,7 @@ import Methods.showPrice
 import scala.Console.println
 import main.scala._
 import modules.DatabaseAccess
-// import fansi
+// import fans
 
 object Main {
 
@@ -92,6 +92,19 @@ object Main {
 
     allSame || allDifferent
   }
+
+  def a = {
+    println("This happened.")
+    1
+  }
+
+  val b = {
+    println("This happened.")
+    2
+  }
+
+  println(a + a)
+  println(b + b)
 
 
 }
