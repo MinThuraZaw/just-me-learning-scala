@@ -10,4 +10,11 @@ object Methods {
 
   }
 
+  val add = (x:Int, y:Int) => x + y
+
+  def allCap(str:String): String = {
+    str.capitalize
+  }
+
+
 }
