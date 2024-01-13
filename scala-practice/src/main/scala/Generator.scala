@@ -1,18 +1,18 @@
+package main.scala
+
 class Generator(previous: Int) {
 
-  def nextInt(): (Int, Generator) =  {
+  def nextInt: (Int, Generator) =  {
     val result = previous * 100 + 1
-    (result, Generator(result))
+    (result, new Generator(result))
 
   }
 
 }
 
 object Generator {
-  def apply(i: Int): Generator = ???
-
-  def init(): Generator ={
-    Generator(40)
-  }
+  def init: Generator = new Generator(40)
 }
+
+
 
