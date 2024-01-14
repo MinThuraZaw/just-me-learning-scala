@@ -1,6 +1,9 @@
 package modules
 
-object HttpServer extends App {
+case class HttpServer(url:String) {
+
+  def start():Unit = ???
+  def stop():Unit = ???
 
 }
 
