@@ -37,6 +37,47 @@ class HeapProperties(heapInterface: HeapInterface) extends Properties("Heap"):
     }
 
 
+  property("continually finding and deleting the minimal element of a heap should return a sorted sequence") =
+    // recursively traverse the heap
+    def check(heap: List[Node]): Boolean =
+    // if the heap is empty, or if it has just one element, we have
+    // successfully finished our checks
+      if isEmpty(heap) || isEmpty(deleteMin(heap)) then
+        true
+      else
+        // find the minimal element
+        val x1: Int = heapInterface.findMin(heap)
+        // delete the minimal element of `heap`
+        val heap2: List[Node] = heapInterface.deleteMin(heap)
+        // find the minimal element in `heap2`
+        val x2: Int = heapInterface.findMin(heap2)
+        // check that the deleted element is smaller than the minimal element
+        // of the remaining heap, and that the remaining heap verifies the
+        // same property (by recursively calling `check`)
+        val checked: Boolean = x1 <= x2
+        checked
+    // check arbitrary heaps
+    forAll { (heap: List[Node]) =>
+      check(heap)
+    }
+
+  property("given an empty heap and a list of integers, insert all to heap and repeatly finding and deleting return the intial sequence of intergers") =
+    def check(seq: Seq[Int], heap: List[Node]): Boolean =
+      if heap.isEmpty && seq.isEmpty then
+        true
+      else if heap.isEmpty || seq.isEmpty then
+        false
+      else
+        val heapElement = heapInterface.findMin(heap)
+        seq.head == heapElement && check(seq.tail, heapInterface.deleteMin(heap))
+
+    forAll { (seq: Seq[Int]) =>
+      var heap = heapInterface.empty
+      seq.foreach(item => heap = heapInterface.insert(item, heap))
+      check(seq.sortBy(_.self), heap)
+    }
+
+
 
 
   // random heap generator --- DO NOT MODIFY
