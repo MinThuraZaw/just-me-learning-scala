@@ -21,3 +21,5 @@
 #### Scala Blogs
 
 => [Haoyi's Programming Blog](https://www.lihaoyi.com/)
+
+=> [Rock the JVM Blog](https://blog.rockthejvm.com/)
