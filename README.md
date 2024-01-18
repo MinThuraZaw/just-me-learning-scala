@@ -1,6 +1,6 @@
 #### Just me learning and practicing Scala.
 
-My preferred Scala Learning Path
+#### My preferred Scala Learning Path
 
 => [Getting Started with IntelliJ](https://docs.scala-lang.org/getting-started/intellij-track/getting-started-with-scala-in-intellij.html)
 
@@ -16,3 +16,8 @@ My preferred Scala Learning Path
 => [Functional Programming Principles in Scala - Coursera](https://www.coursera.org/learn/scala-functional-programming?specialization=scala)
 
 => [The Scala Toolkit](https://docs.scala-lang.org/toolkit/introduction.html)
+
+
+#### Scala Blogs
+
+=> [Haoyi's Programming Blog](https://www.lihaoyi.com/)
