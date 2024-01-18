@@ -38,5 +38,28 @@ object ContextParameterExample extends App {
   display(stringValue) // Output: String: Hello, Scala!
 
   // summon()
+}
 
+// SubTyping
+trait Comparable{
+  def compareTo(that: Comparable): Int
+}
+
+case class Rational(num: Int, denom: Int) extends Comparable{
+  override def compareTo(that: Comparable): Int = ???
+}
+
+// def sort(List[Comparable]): List[Comparable] = ???
+
+def sort[A](as: List[A])(implicit ordering: Ordering[A]): List[A]
+
+// given definition with regular
+implicit val orderingInt: Ordering[Int] = new Ordering[Int] {
+  def compare(x: Int, y: Int): Int =
+    if (x < y) -1 else if (x > y) 1 else 0
+}
+
+// with condition
+implicit def orderingPair[A, B](implicit ordA: Ordering[A], ordB: Ordering[B]): Ordering[(A, B)] = new Ordering[(A, B)] {
+  def compare(x: (A, B), y: (A, B)) = ???
 }
