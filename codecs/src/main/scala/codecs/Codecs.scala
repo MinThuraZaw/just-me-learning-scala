@@ -82,11 +82,11 @@ trait EncoderInstances:
 
   /** An encoder for `String` values */
   given stringEncoder: Encoder[String] =
-    ??? // TODO Implement the `Encoder[String]` given instance
+    Encoder.fromFunction(s => Json.Str(s))
 
-  /** An encoder for `Boolean` values */
-  // TODO Define a given instance of type `Encoder[Boolean]`
-
+    /** An encoder for `Boolean` values */
+  given booleanEncoder: Encoder[Boolean] =
+  Encoder.fromFunction(b => Json.Bool(b))
   /**
     * Encodes a list of values of type `A` into a JSON array containing
     * the list elements encoded with the given `encoder`
@@ -187,52 +187,59 @@ trait DecoderInstances:
   given unitDecoder: Decoder[Unit] =
     Decoder.fromPartialFunction { case Json.Null => () }
 
-  /** A decoder for `Int` values. Hint: use the `isValidInt` method of `BigDecimal`. */
-  // TODO Define a given instance of type `Decoder[Int]`
+  given intDecoder: Decoder[Int] =
+    Decoder.fromPartialFunction {
+      case Json.Num(x: BigDecimal) if x.isValidInt => x.toInt
+    }
 
-  /** A decoder for `String` values */
-  // TODO Define a given instance of type `Decoder[String]`
+    /** A decoder for `String` values */
+  given stringDecoder: Decoder[String] =
+  Decoder.fromPartialFunction {
+    case Json.Str(s: String) => s
+  }
 
-  /** A decoder for `Boolean` values */
-  // TODO Define a given instance of type `Decoder[Boolean]`
+
+    /** A decoder for `Boolean` values */
+  given booleanDecoder: Decoder[Boolean] =
+  Decoder.fromPartialFunction {
+    case Json.Bool(b: Boolean) => b
+  }
+
+
+  private def tryToDecodeList[A](lst: List[Json])(using decoder: Decoder[A]): Option[List[A]] = {
+    lst.foldLeft(Some(List.empty[A]): Option[List[A]]) { (accumulate, currentValue) =>
+      val decoded = decoder.decode(currentValue)
+      if (decoded == None || accumulate == None) then {
+        None
+      } else {
+        Some(accumulate.getOrElse(List.empty[A]) ++ decoded)
+      }
+    }
+  }
+
 
   /**
     * A decoder for JSON arrays. It decodes each item of the array
     * using the given `decoder`. The resulting decoder succeeds only
     * if all the JSON array items are successfully decoded.
     */
-  given listDecoder[A](using decoder: Decoder[A]): Decoder[List[A]] =
-    // Decode the provided `item` with the provided `decoder`. If this succeeds,
-    // return the decoded item **prepended** to the `previouslyDecodedItems`.
-    def decodeAndPrepend(item: Json, previouslyDecodedItems: List[A]): Option[List[A]] =
-      ???
-    // Decode the provided `item` only if the previous items were successfully decoded.
-    // In case `maybePreviouslyDecodedItems` is `None` (which means that at least
-    // one of the previous items failed to be decoded), return `None`.
-    // Otherwise, decode the provided `item` and prepend it to the previously
-    // decoded items (use the method `decodeAndPrepend`).
-    def processItem(item: Json, maybePreviouslyDecodedItems: Option[List[A]]): Option[List[A]] =
-      ???
-    // Decodes all the provided JSON items. Fails if any item fails to
-    // be decoded.
-    // Iterates over the items, and tries to decode each item if the
-    // previous items could be successfully decoded.
-    def decodeAllItems(items: List[Json]): Option[List[A]] =
-      items.foldRight(Some(List.empty[A]))(processItem)
-    // Finally, write a decoder that checks whether the JSON value to decode
-    // is a JSON array.
-    //   - if it is the case, call `decodeAllItems` on the array items,
-    //   - otherwise, return a failure (`None`)
-    Decoder.fromFunction {
-      ???
+  given listDecoder[A](using decoder: Decoder[A]): Decoder[List[A]] = {
+    Decoder.fromPartialFunction {
+      case Json.Arr(lst) if !tryToDecodeList[A](lst).isEmpty => tryToDecodeList[A](lst).get
     }
+  }
 
   /**
-    * A decoder for JSON objects. It decodes the value of a field of
-    * the supplied `name` using the given `decoder`.
-    */
+   * A decoder for JSON objects. It decodes the value of a field of
+   * the supplied `name` using the given `decoder`.
+   */
   def field[A](name: String)(using decoder: Decoder[A]): Decoder[A] =
-    ???
+    Decoder.fromFunction { e =>
+      e match {
+        case Json.Obj(e) => e.get(name).flatMap(e => decoder.decode(e))
+        case _ => None
+      }
+    }
 
 end DecoderInstances
 
