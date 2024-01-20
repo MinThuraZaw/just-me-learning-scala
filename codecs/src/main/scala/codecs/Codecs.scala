@@ -262,7 +262,8 @@ trait PersonCodecs:
     *       `transform`.
     */
   given Decoder[Person] =
-    ???
+  Decoder.field[String]("name").zip(Decoder.field[Int]("age"))
+    .transform[Person](r => Person(r._1, r._2))
 
 end PersonCodecs
 
@@ -271,13 +272,14 @@ case class Contacts(people: List[Person])
 object Contacts extends ContactsCodecs
 
 trait ContactsCodecs:
-
-  // TODO Define the encoder and the decoder for `Contacts`
   // The JSON representation of a value of type `Contacts` should be
   // a JSON object with a single field named “people” containing an
   // array of values of type `Person` (reuse the `Person` codecs)
-  given Encoder[Contacts] = ???
+  given Encoder[Contacts] = ObjectEncoder.field[List[Person]]("people").transform[Contacts](c => c.people)
+
   // ... then implement the decoder
+  given Decoder[Contacts] = Decoder.field[List[Person]]("people").transform[Contacts](lst => Contacts(lst))
+
 
 end ContactsCodecs
 
