@@ -17,10 +17,10 @@ case class JArray(value: List[Json]) extends Json
 case class JObject(fields: (String, Json)*) extends Json
 
 object Json{
-  def obj(fields: (String, JsonField)* ): Json = {
-    // JObject(fields.map(_.json)*)
-
-  }
+//  def obj(fields: (String, JsonField)* ): Json = {
+//    // JObject(fields.map(_.json)*)
+//
+//  }
 
   case class JsonField(json: Json)
 }
