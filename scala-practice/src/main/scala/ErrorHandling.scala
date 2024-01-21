@@ -1,7 +1,8 @@
 import scala.util.control.NonFatal
 import scala.util.Try
-import scala.util.{Success, Failure}
-import java.time.LocalDate
+import scala.util.{Failure, Success}
+import java.time.{LocalDate, Period}
+import scala.io.Source
 
 object ErrorHandling extends App {
   try{
@@ -43,7 +44,37 @@ object ErrorHandling extends App {
   }
 
   def parseDate(str: String): Try[LocalDate] = {
-    ???
+    Try{
+      LocalDate.parse(str)
+    }
   }
+
+  def tryPeriod(str1: String, str2: String): Try[Period] = {
+    for {
+      date1 <- parseDate(str1)
+      date2 <- parseDate(str2)
+    }
+      yield Period.between(date1, date2)
+
+  }
+
+  println(tryPeriod("2024-01-01", "2024-02-01"))
+  println(tryPeriod("2024-01-33", "2024-02-33"))
+
+  // read from file and parse
+  def readStringFile(fileName: String): Try[Seq[String]] = {
+    Try{
+      val source = Source.fromFile(fileName)
+      val stringInFile = source.getLines().toSeq
+      source.close()
+      stringInFile
+    }
+  }
+
+  val lines = readStringFile("src/main/scala/Sample.txt")
+  println(lines match {
+    case Success(lines) => println(lines)
+  })
+
 
 }
