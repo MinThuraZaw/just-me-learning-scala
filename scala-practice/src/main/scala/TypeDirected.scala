@@ -51,15 +51,15 @@ case class Rational(num: Int, denom: Int) extends Comparable{
 
 // def sort(List[Comparable]): List[Comparable] = ???
 
-def sort[A](as: List[A])(implicit ordering: Ordering[A]): List[A]
+// def sort[A](as: List[A])(implicit ordering: Ordering[A]): List[A]
 
 // given definition with regular
-implicit val orderingInt: Ordering[Int] = new Ordering[Int] {
-  def compare(x: Int, y: Int): Int =
-    if (x < y) -1 else if (x > y) 1 else 0
-}
+//implicit val orderingInt: Ordering[Int] = new Ordering[Int] {
+//  def compare(x: Int, y: Int): Int =
+//    if (x < y) -1 else if (x > y) 1 else 0
+//}
 
 // with condition
-implicit def orderingPair[A, B](implicit ordA: Ordering[A], ordB: Ordering[B]): Ordering[(A, B)] = new Ordering[(A, B)] {
-  def compare(x: (A, B), y: (A, B)) = ???
-}
+//implicit def orderingPair[A, B](implicit ordA: Ordering[A], ordB: Ordering[B]): Ordering[(A, B)] = new Ordering[(A, B)] {
+//  def compare(x: (A, B), y: (A, B)) = ???
+//}
