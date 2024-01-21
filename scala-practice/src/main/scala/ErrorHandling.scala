@@ -73,7 +73,7 @@ object ErrorHandling extends App {
 
   val lines = readStringFile("src/main/scala/Sample.txt")
   println(lines match {
-    case Success(lines) => println(lines)
+    case Success(str) => str
   })
 
 
