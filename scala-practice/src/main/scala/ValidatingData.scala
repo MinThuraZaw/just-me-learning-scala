@@ -1,3 +1,5 @@
+import scala.util.Try
+
 object ValidatingData extends App {
   type Errors = Seq[String]
   type validated[A] = Either[Errors, A]
@@ -17,6 +19,11 @@ object ValidatingData extends App {
   }
 
   // all available in third-party libraries
+
+  // combining Try and Either
+//  def readDateString(fileName: String): Try[Seq[String]] = {
+//    Using()
+//  }
 
 
 }
