@@ -17,7 +17,12 @@ object FutureExamples extends App {
     bcrypt(10, password).map(passwordHash => insertUser(name, passwordHash))
   }
 
-  println("calling bcrypt")
-  bcrypt(10, "paerendjfer").map(hash => println(s"Result : $hash"))
+  // println("calling bcrypt")
+  // bcrypt(10, "paerendjfer").map(hash => println(s"Result : $hash"))
+
+  val fa = Future(println("A"))
+  val fb = Future(println("B"))
+  println(fa)
+  println(fb)
 }
 
