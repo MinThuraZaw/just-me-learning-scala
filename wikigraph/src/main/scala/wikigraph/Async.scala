@@ -15,11 +15,12 @@ object Async:
     * In case the given future value failed, this method should
     * return a failed future with the same error.
     */
-  def transformSuccess(eventuallyX: Future[Int])(implicit ec: ExecutionContext): Future[Boolean] =
+  def transformSuccess(eventuallyX: Future[Int]): Future[Boolean] = {
     eventuallyX.transform {
       case Success(x) => Success(x % 2 == 0) // Check if the number is even
       case Failure(exception) => Failure(exception) // Pass along the failure
     }
+  }
 
   /**
     * Transforms a failed future value of type `Int` into a successful
@@ -30,10 +31,12 @@ object Async:
     * In case the given future value was successful, this method should
     * return a successful future with the same value.
     */
-  def recoverFailure(eventuallyX: Future[Int])(implicit ec: ExecutionContext): Future[Int] =
+  def recoverFailure(eventuallyX: Future[Int])(implicit ec: ExecutionContext): Future[Int] = {
+
     eventuallyX.recover {
       case NonFatal(_) => -1 // Recover from non-fatal failures with -1
     }
+  }
 
   /**
     * Performs two asynchronous computation, one after the other.
