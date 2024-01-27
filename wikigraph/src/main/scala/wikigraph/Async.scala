@@ -1,8 +1,8 @@
 package wikigraph
 
 import scala.concurrent.ExecutionContext.Implicits.global
-import scala.concurrent.{Future, Promise}
-import scala.util.Try
+import scala.concurrent.{ExecutionContext, Future, Promise}
+import scala.util.{Failure, Success, Try}
 import scala.util.control.NonFatal
 
 object Async:
@@ -15,8 +15,11 @@ object Async:
     * In case the given future value failed, this method should
     * return a failed future with the same error.
     */
-  def transformSuccess(eventuallyX: Future[Int]): Future[Boolean] =
-    ???
+  def transformSuccess(eventuallyX: Future[Int])(implicit ec: ExecutionContext): Future[Boolean] =
+    eventuallyX.transform {
+      case Success(x) => Success(x % 2 == 0) // Check if the number is even
+      case Failure(exception) => Failure(exception) // Pass along the failure
+    }
 
   /**
     * Transforms a failed future value of type `Int` into a successful
@@ -27,8 +30,10 @@ object Async:
     * In case the given future value was successful, this method should
     * return a successful future with the same value.
     */
-  def recoverFailure(eventuallyX: Future[Int]): Future[Int] =
-    ???
+  def recoverFailure(eventuallyX: Future[Int])(implicit ec: ExecutionContext): Future[Int] =
+    eventuallyX.recover {
+      case NonFatal(_) => -1 // Recover from non-fatal failures with -1
+    }
 
   /**
     * Performs two asynchronous computation, one after the other.
@@ -44,8 +49,11 @@ object Async:
   def sequenceComputations[A, B](
     asyncComputation1: () => Future[A],
     asyncComputation2: () => Future[B]
-  ): Future[(A, B)] =
-    ???
+  )(implicit ec: ExecutionContext):  Future[(A, B)] = {
+    asyncComputation1().flatMap { result1 =>
+      asyncComputation2().map(result2 => (result1, result2))
+    }
+  }
 
   /**
     * Concurrently performs two asynchronous computations and pair their
@@ -57,9 +65,25 @@ object Async:
     */
   def concurrentComputations[A, B](
     asyncComputation1: () => Future[A],
-    asyncComputation2: () => Future[B]
-  ): Future[(A, B)] =
-    ???
+    asyncComputation2: () => Future[B])(implicit ec: ExecutionContext): Future[(A, B)] = {
+    val future1 = asyncComputation1()
+    val future2 = asyncComputation2()
+
+    val combinedFuture: Future[(A, B)] = for {
+      result1 <- future1
+      result2 <- future2
+    } yield (result1, result2)
+
+    // Handle failure of either future
+    val resultFuture: Future[(A, B)] = combinedFuture.recoverWith {
+      case ex1: Throwable =>
+        future2.flatMap(_ => Future.failed(ex1)) // Propagate the failure of the first computation
+      case ex2: Throwable =>
+        future1.flatMap(_ => Future.failed(ex2)) // Propagate the failure of the second computation
+    }
+
+    resultFuture
+  }
 
   /**
     * Makes a chocolate cake.
@@ -76,8 +100,17 @@ object Async:
     meltButterWithChocolate: (Butter, Chocolate) => Future[MeltedButterAndChocolate],
     mixEverything: (MeltedButterAndChocolate, Eggs, Sugar) => Future[CakeDough],
     bake: CakeDough => Future[Cake]
-  ): Future[Cake] =
-    ???
+  )(implicit ec: ExecutionContext) : Future[Cake] = {
+    val meltedButterAndChocolateFuture: Future[MeltedButterAndChocolate] =
+      meltButterWithChocolate(butter, chocolate)
+
+    // Mix everything
+    val cakeDoughFuture: Future[CakeDough] =
+      meltedButterAndChocolateFuture.flatMap(melted => mixEverything(melted, eggs, sugar))
+
+    // Bake the cake
+    cakeDoughFuture.flatMap(bake)
+  }
 
   /**
     * Attempts to perform an asynchronous computation at most
@@ -89,7 +122,20 @@ object Async:
     *
     * Hint: recursively call `insist` in the failure handler.
     */
-  def insist[A](asyncComputation: () => Future[A], maxAttempts: Int): Future[A] =
-    ???
+  def insist[A](asyncComputation: () => Future[A], maxAttempts: Int)(implicit ec: ExecutionContext): Future[A] = {
+    if (maxAttempts <= 0) {
+      // No more attempts left, return a failed future
+      Future.failed(new RuntimeException("Exceeded maximum attempts"))
+    } else {
+      // Execute the asynchronous computation
+      val resultFuture = asyncComputation()
+
+      resultFuture.recoverWith {
+        case NonFatal(_) =>
+          // In case of failure, recursively call insist with reduced maxAttempts
+          insist(asyncComputation, maxAttempts - 1)
+      }
+    }
+  }
 
 end Async
