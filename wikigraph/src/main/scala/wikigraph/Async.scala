@@ -31,8 +31,7 @@ object Async:
     * In case the given future value was successful, this method should
     * return a successful future with the same value.
     */
-  def recoverFailure(eventuallyX: Future[Int])(implicit ec: ExecutionContext): Future[Int] = {
-
+  def recoverFailure(eventuallyX: Future[Int]): Future[Int] = {
     eventuallyX.recover {
       case NonFatal(_) => -1 // Recover from non-fatal failures with -1
     }
@@ -52,7 +51,7 @@ object Async:
   def sequenceComputations[A, B](
     asyncComputation1: () => Future[A],
     asyncComputation2: () => Future[B]
-  )(implicit ec: ExecutionContext):  Future[(A, B)] = {
+  ): Future[(A, B)] = {
     asyncComputation1().flatMap { result1 =>
       asyncComputation2().map(result2 => (result1, result2))
     }
@@ -66,9 +65,7 @@ object Async:
     *
     * If one of them fails, this method should return the failure.
     */
-  def concurrentComputations[A, B](
-    asyncComputation1: () => Future[A],
-    asyncComputation2: () => Future[B])(implicit ec: ExecutionContext): Future[(A, B)] = {
+  def concurrentComputations[A, B](asyncComputation1: () => Future[A], asyncComputation2: () => Future[B]): Future[(A, B)] = {
     val future1 = asyncComputation1()
     val future2 = asyncComputation2()
 
@@ -103,7 +100,7 @@ object Async:
     meltButterWithChocolate: (Butter, Chocolate) => Future[MeltedButterAndChocolate],
     mixEverything: (MeltedButterAndChocolate, Eggs, Sugar) => Future[CakeDough],
     bake: CakeDough => Future[Cake]
-  )(implicit ec: ExecutionContext) : Future[Cake] = {
+  ): Future[Cake] = {
     val meltedButterAndChocolateFuture: Future[MeltedButterAndChocolate] =
       meltButterWithChocolate(butter, chocolate)
 
@@ -125,7 +122,7 @@ object Async:
     *
     * Hint: recursively call `insist` in the failure handler.
     */
-  def insist[A](asyncComputation: () => Future[A], maxAttempts: Int)(implicit ec: ExecutionContext): Future[A] = {
+  def insist[A](asyncComputation: () => Future[A], maxAttempts: Int): Future[A] = {
     if (maxAttempts <= 0) {
       // No more attempts left, return a failed future
       Future.failed(new RuntimeException("Exceeded maximum attempts"))
